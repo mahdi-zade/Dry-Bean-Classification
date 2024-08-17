@@ -9,3 +9,6 @@
 ------------------------------------------------------------
 
 https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss/blob/main/Multi-class-Classification-of-Dry-Beans.ipynb
+
+
+https://ceur-ws.org/Vol-2951/paper3.pdf
