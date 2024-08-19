@@ -1,4 +1,5 @@
 # Dry Bean Classification
+![image](https://github.com/user-attachments/assets/33996fff-9333-45ab-8876-9dd79627aaa6 "Title" {width=40px height=400px}) 
 
 ## Aim
 The aim of this repository is to start from scratch and build simple neural networks to classify bean images. at each step, the model and the parameters will be changed to check up the effect of each one the final result and hopefuly try achieving the best result in the end. This project is the perfect fit for anyone who is new to the field of machine learning and wants to have a better understanding of /neural network architecture.
