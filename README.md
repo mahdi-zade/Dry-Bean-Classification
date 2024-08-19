@@ -1,5 +1,7 @@
 # Dry Bean Classification
-![image](https://github.com/user-attachments/assets/33996fff-9333-45ab-8876-9dd79627aaa6 "Title" {width=40px height=400px}) 
+<p align="center">
+  <img width="1000" src="https://github.com/user-attachments/assets/bb1a2a85-3ba5-4759-874a-4fb096ee99ad">
+</p>
 
 ## Aim
 The aim of this repository is to start from scratch and build simple neural networks to classify bean images. at each step, the model and the parameters will be changed to check up the effect of each one the final result and hopefuly try achieving the best result in the end. This project is the perfect fit for anyone who is new to the field of machine learning and wants to have a better understanding of /neural network architecture.
@@ -12,9 +14,9 @@ You can access the dataset [here](https://archive.ics.uci.edu/dataset/602/dry+be
 - This means there are 7 labels and 16 features.
 
 ## Part one: A two layer neural network
-
-
-
+We will start with the simplest neural network which contains 1 hidden layer.
+We will design and test a model with following traits, parameters, and techniques:
+1. 
 
 
 
