@@ -4,49 +4,75 @@
 </p>
 
 ## Aim
-The aim of this repository is to start from scratch and build simple neural networks to classify bean images. at each step, the model and the parameters will be changed to check up the effect of each one the final result and hopefuly try achieving the best result in the end. This project is the perfect fit for anyone who is new to the field of machine learning and wants to have a better understanding of /neural network architecture.
+The aim of this repository is to start from scratch and build simple neural networks to automatically classify bean species. At each step, the model and the parameters will be changed to check up the effect of each one the final result and hopefuly try achieving the best result in the end. This project is the perfect fit for anyone who is new to the field of deep learning and wants to have a better understanding of neural network architecture.
 
 ## Dataset
 You can access the dataset [here](https://archive.ics.uci.edu/dataset/602/dry+bean+dataset)
 - Contains images of 13,611 grains of 7 different registered dry beans.
-- The images were taken with a high-resolution camera.
 - A total of 16 features; 12 dimensions and 4 shape forms, were obtained from the grains.
 - This means there are 7 labels and 16 features.
+- The images were taken with a high-resolution camera.
 
-## Part one: A two layer neural network
+
+## Part 1: A two layer neural network
 We will start with the simplest neural network which contains 1 hidden layer.
 We will design and test a model with following traits, parameters, and techniques:
 1. Feedforward neural network with one  hidden layer.
-2. Activation function: ReLU.
-3. Cost Function: cross entropy
-4. Data Split: 70% for training and 30% for evaluation
-5. Evaluation: Accuracy graph and loss function graph and also the confusion matrix.
+2. Initial Weights: zero
+3. Activation function: ReLU.
+4. Cost Function: cross entropy
+5. Data Split: 70% for training and 30% for evaluation
+6. 25 epochs
 
 You can access the colab notebook [here](https://colab.research.google.com/drive/1u9zS1-qVwK8sMGXzybIMF3BH9roumN7s?usp=sharing)
 
-- Results: 0.6881 accuracy
+- Results: 0.2686 accuracy
   <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/f88bcb49-bfce-4fe0-81a6-3fb65c977cf8">
+    <img width="500" src="https://github.com/user-attachments/assets/d3e47195-e6f7-4158-aa08-4ff98959a3ed">
   </p>
 
-  <p align="center">
-    <img width="300" src="https://github.com/user-attachments/assets/1f830e93-8ef8-48cb-b8aa-fec3642905dd">
-  </p>
 
-## Part two: Normalizing the input data
+## Part 2: The Effect of Weight Initialization
+In part one, the weights where initialized to be zero, now we will initialze the weights to be normal distribution with mean zero and several values of standard deviation.
+The values for std(standard deviation) were set to [0,0.5,1,1.5,2,5,10].
+for each of the values of std, training is repeated for 5 times and 25 epochs each and the final accuracy is set to be the average of the 5 training iterations. the final result is a plot 
+![image](https://github.com/user-attachments/assets/ac9897ba-d277-4c5e-ba25-87f2f9d470ad)
+![image](https://github.com/user-attachments/assets/608357b3-a244-4956-b892-41257b76740c)
+- Discussions: So far initialing weights to be a normal distribution with a mean zero and standard deviation 1 seems logical.
+
+
+## Part 3: Normalizing the input features
 Obtain classification results for normalized and unnormalized input data and discuss the results.
 - Theoretically, having the inputs values be between zero and one, should significantly decrease the computation time and give better results. Let's test it.
-- The changes made to the original code can be seen in the colab notebook.
+- weights are initialized to be a normal distribution with a mean zero and standard deviation 1.
 - You can access the colab notebook [here](https://colab.research.google.com/drive/1wxbHO6VRS1BoKLn7-Ao2hrYrGLY85c41?usp=sharing)
 
-- Results: 0.6881 accuracy
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/f88bcb49-bfce-4fe0-81a6-3fb65c977cf8">
-  </p>
+- Results:
+- For unnormalized data based on previous part: Average Accuracy: 0.4186
+- For normalized input features: accuracy = Average Accuracy: 0.2650
 
   <p align="center">
-    <img width="300" src="https://github.com/user-attachments/assets/1f830e93-8ef8-48cb-b8aa-fec3642905dd">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
   </p>
+
+- Discussion:
+- Normalizing data seems to have negatively affected the final accuracy.
+
+## Part 4: Adding One more hidden layer
+- Results:
+- For unnormalized input features: Average Accuracy: 0.3598
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+- For normalized input features: accuracy = Average Accuracy: 0.5143
+- 
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+
+- Discussion: Adding a new layer seems to have negatively affected the final accuracy.
+
+
 
 
 فقط اونجایی که گفته از scratch بزن نمیخواد با همین کتاب خونه ها آماده بزن
