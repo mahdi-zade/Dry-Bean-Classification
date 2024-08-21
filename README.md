@@ -70,8 +70,58 @@ Obtain classification results for normalized and unnormalized input data and dis
     <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
   </p>
 
-- Discussion: Adding a new layer seems to have negatively affected the final accuracy.
+- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
 
+## Part 4: Adding One more hidden layer
+- Results:
+- For unnormalized input features: Average Accuracy: 0.3598
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+- For normalized input features: accuracy = Average Accuracy: 0.5143
+- 
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+
+- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
+
+## Part 4: Adding One more hidden layer
+- Results:
+- For unnormalized input features: Average Accuracy: 0.3598
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+- For normalized input features: accuracy = Average Accuracy: 0.5143
+- 
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+
+- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
+
+## Part 5: Changing model architecture to Gaussian RBF
+- Results:
+- For normalized input features: accuracy = Average Accuracy: 0.2517
+- 
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
+  </p>
+
+- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
+
+
+## Part X: Adding Momentum
+The adam optimizer doesn't have a setting to chage momentum so we switch to SGD optimizer.
+Momentum with values of [0.0, 0.5, 0.9, 0.99] are implemented
+- Results:
+- For normalized input features and different values for momentum:
+- 
+  <p align="center">
+    <img width="500" src="https://github.com/user-attachments/assets/bf88baee-b882-4508-9457-aa191ee3ad31">
+  </p>
+
+- Discussion: increasing momentum seems to negatively affect the final accuracy.
 
 
 
@@ -87,3 +137,9 @@ https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss/blob/main/Mu
 
 
 https://ceur-ws.org/Vol-2951/paper3.pdf
+------------------------------------
+Give me the pytorch code for this:
+We want to do the manual calculation of the training of a model with the following specification:
+We have an image with three channels in dimensions of 6 x 6. After passing the image through a 3x3 convolution filter with a stride equal to 3, this image reaches the size of 2x2, and after passing through the non-linear sigmoid layer, it is converted into a linear layer and after passing through the last linear layer, it reaches the final output.
+The three-channel input image needs to be initialized pixel by pixel in the beginning, also the convolution filter needs to be specified. The bias values ​​in the convolution and linear layer are equal to zero, and the values ​​of the linear layer weights are equal to [2,1,1,-1]. The optimal output of this input is equal to -1.
+Consider the cost function as the square error and perform one step of the training with the learning algorithm of SGD and the learning rate of 0.1.
