@@ -22,9 +22,9 @@ We will design and test a model with following traits, parameters, and technique
 3. Activation function: ReLU.
 4. Cost Function: cross entropy
 5. Data Split: 70% for training and 30% for evaluation
-6. 25 epochs
+6. 50 epochs
 
-You can access the colab notebook [here](https://colab.research.google.com/drive/1u9zS1-qVwK8sMGXzybIMF3BH9roumN7s?usp=sharing)
+You can access the colab notebook [here](https://colab.research.google.com/drive/1CopOg6KXu9KKkUqXwShRra7T7AIvpV-E?usp=sharing)
 
 - Results: 0.2686 accuracy
   <p align="center">
