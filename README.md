@@ -14,7 +14,7 @@ You can access the dataset [here](https://archive.ics.uci.edu/dataset/602/dry+be
 - The images were taken with a high-resolution camera.
 
 
-## Part 1: A two layer neural network
+## Part 1: A Two Layer Neural Network
 We will design and test a model with following traits, parameters, and techniques:
 1. Preprocessing: Standard scaling each of the 16 features.
 2. Data Split: 70% for training and 30% for testing
@@ -29,120 +29,35 @@ We will design and test a model with following traits, parameters, and technique
 You can access the colab notebook [here](https://colab.research.google.com/drive/1CopOg6KXu9KKkUqXwShRra7T7AIvpV-E?usp=sharing)
 
 - Average Result Across 5 Repetitions:
-  - ds
-  - ds
-  - ds
-  - d 
+  - Average Training Loss: 0.1819
+  - Average Training Accuracy: 0.9316
+  - Average Test Loss: 0.1812
+  - Average Test Accuracy: 0.9323
 
 
-## Part 2: The Effect of Weight Initialization
-In part one, the weights where initialized to be zero, now we will initialze the weights to be normal distribution with mean zero and several values of standard deviation.
-The values for std(standard deviation) were set to [0,0.5,1,1.5,2,5,10].
-for each of the values of std, training is repeated for 5 times and 25 epochs each and the final accuracy is set to be the average of the 5 training iterations. the final result is a plot 
-![image](https://github.com/user-attachments/assets/ac9897ba-d277-4c5e-ba25-87f2f9d470ad)
-![image](https://github.com/user-attachments/assets/608357b3-a244-4956-b892-41257b76740c)
-- Discussions: So far initialing weights to be a normal distribution with a mean zero and standard deviation 1 seems logical.
+## Part 2: A Three Layer Neural Network
+I'ts the exact same methods and techniques used in the last part, only with a difference of a new hidden layer added to the neural network architecture.
+
+1. Preprocessing: Standard scaling each of the 16 features.
+2. Data Split: 70% for training and 30% for testing
+3. Feedforward neural network with one hidden layer.
+4. The input layer has 16 inputs and 32 outputs and is a fully connected neural network
+5. The first hidden layer has 32 inputs and 16 outputs and is a fully connected neural network
+6. Activation function: ReLU.
+7. The second hidden layer has 16 inputs and 7 outputs(7 final classes) and is a fully connected neural network
+8. Activation function: Sigmoid.
+9. Initial Weights: normal distribution
+10. Cost Function: cross entropy
+11. 50 epochs
+
+You can access the colab notebook [here](https://colab.research.google.com/drive/1CopOg6KXu9KKkUqXwShRra7T7AIvpV-E?usp=sharing)
+
+- Average Result Across 5 Repetitions:
+  - Average Training Loss: 0.1784
+  - Average Training Accuracy: 0.9334
+  - Average Test Loss: 0.1842
+  - Average Test Accuracy: 0.9332
+
+- The three layer neural network yields a slightly better result.
 
 
-## Part 3: Normalizing the input features
-Obtain classification results for normalized and unnormalized input data and discuss the results.
-- Theoretically, having the inputs values be between zero and one, should significantly decrease the computation time and give better results. Let's test it.
-- weights are initialized to be a normal distribution with a mean zero and standard deviation 1.
-- You can access the colab notebook [here](https://colab.research.google.com/drive/1wxbHO6VRS1BoKLn7-Ao2hrYrGLY85c41?usp=sharing)
-
-- Results:
-- For unnormalized data based on previous part: Average Accuracy: 0.4186
-- For normalized input features: accuracy = Average Accuracy: 0.2650
-
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-
-- Discussion:
-- Normalizing data seems to have negatively affected the final accuracy.
-
-## Part 4: Adding One more hidden layer
-- Results:
-- For unnormalized input features: Average Accuracy: 0.3598
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-- For normalized input features: accuracy = Average Accuracy: 0.5143
-- 
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-
-- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
-
-## Part 4: Adding One more hidden layer
-- Results:
-- For unnormalized input features: Average Accuracy: 0.3598
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-- For normalized input features: accuracy = Average Accuracy: 0.5143
-- 
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-
-- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
-
-## Part 4: Adding One more hidden layer
-- Results:
-- For unnormalized input features: Average Accuracy: 0.3598
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-- For normalized input features: accuracy = Average Accuracy: 0.5143
-- 
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-
-- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
-
-## Part 5: Changing model architecture to Gaussian RBF
-- Results:
-- For normalized input features: accuracy = Average Accuracy: 0.2517
-- 
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/5e54dd63-a9a8-4dc9-b41c-928213d0c085">
-  </p>
-
-- Discussion: Adding a new layer seems to have negatively affected the final accuracy but normalizing data gives the best accuracy for the model yet.
-
-
-## Part X: Adding Momentum
-The adam optimizer doesn't have a setting to chage momentum so we switch to SGD optimizer.
-Momentum with values of [0.0, 0.5, 0.9, 0.99] are implemented
-- Results:
-- For normalized input features and different values for momentum:
-- 
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/bf88baee-b882-4508-9457-aa191ee3ad31">
-  </p>
-
-- Discussion: increasing momentum seems to negatively affect the final accuracy.
-
-
-
-فقط اونجایی که گفته از scratch بزن نمیخواد با همین کتاب خونه ها آماده بزن
-
-سوال اول شبکه عصبی mlp ساده است
-
-سوال دوم convention ساده
-
-------------------------------------------------------------
-
-https://github.com/esssyjr/Multi-class-Classification-of-Dry-Beanss/blob/main/Multi-class-Classification-of-Dry-Beans.ipynb
-
-
-https://ceur-ws.org/Vol-2951/paper3.pdf
-------------------------------------
-Give me the pytorch code for this:
-We want to do the manual calculation of the training of a model with the following specification:
-We have an image with three channels in dimensions of 6 x 6. After passing the image through a 3x3 convolution filter with a stride equal to 3, this image reaches the size of 2x2, and after passing through the non-linear sigmoid layer, it is converted into a linear layer and after passing through the last linear layer, it reaches the final output.
-The three-channel input image needs to be initialized pixel by pixel in the beginning, also the convolution filter needs to be specified. The bias values ​​in the convolution and linear layer are equal to zero, and the values ​​of the linear layer weights are equal to [2,1,1,-1]. The optimal output of this input is equal to -1.
-Consider the cost function as the square error and perform one step of the training with the learning algorithm of SGD and the learning rate of 0.1.
