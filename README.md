@@ -4,7 +4,7 @@
 </p>
 
 ## Aim
-The aim of this repository is to start from scratch and build simple neural networks to automatically classify bean species. At each step, the model and the parameters will be changed to check up the effect of each one the final result and hopefuly try achieving the best result in the end. This project is the perfect fit for anyone who is new to the field of deep learning and wants to have a better understanding of neural network architecture.
+The aim of this repository is to start from scratch and build a simple neural network to automatically classify bean species. This project is the perfect fit for anyone who is new to the field of deep learning and wants to have a better understanding of neural network architecture. The implementation is done via [pytorch library](https://pytorch.org/docs/stable/index.html) which is an optimized tensor library for deep learning using GPUs and CPUs.
 
 ## Dataset
 You can access the dataset [here](https://archive.ics.uci.edu/dataset/602/dry+bean+dataset)
@@ -15,21 +15,24 @@ You can access the dataset [here](https://archive.ics.uci.edu/dataset/602/dry+be
 
 
 ## Part 1: A two layer neural network
-We will start with the simplest neural network which contains 1 hidden layer.
 We will design and test a model with following traits, parameters, and techniques:
-1. Feedforward neural network with one  hidden layer.
-2. Initial Weights: zero
-3. Activation function: ReLU.
-4. Cost Function: cross entropy
-5. Data Split: 70% for training and 30% for evaluation
-6. 50 epochs
+1. Preprocessing: Standard scaling each of the 16 features.
+2. Data Split: 70% for training and 30% for testing
+3. Feedforward neural network with one hidden layer.
+4. The input layer has 16 inputs and 32 outputs and is a fully connected neural network
+6. The hidden layer has 32 inputs and 7 outputs(7 final classes) and is a fully connected neural network
+7. Initial Weights: normal distribution
+8. Activation function: ReLU.
+9. Cost Function: cross entropy
+10. 50 epochs
 
 You can access the colab notebook [here](https://colab.research.google.com/drive/1CopOg6KXu9KKkUqXwShRra7T7AIvpV-E?usp=sharing)
 
-- Results: 0.2686 accuracy
-  <p align="center">
-    <img width="500" src="https://github.com/user-attachments/assets/d3e47195-e6f7-4158-aa08-4ff98959a3ed">
-  </p>
+- Average Result Across 5 Repetitions:
+  - ds
+  - ds
+  - ds
+  - d 
 
 
 ## Part 2: The Effect of Weight Initialization
